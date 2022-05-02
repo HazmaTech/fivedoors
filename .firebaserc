@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fivelockeddoors": {
+      "hosting": {
+        "FiveDoors": [
+          "fivelockeddoors"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fivelockeddoors"
+  }
+}

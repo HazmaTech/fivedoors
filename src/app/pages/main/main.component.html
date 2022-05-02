@@ -1,0 +1,21 @@
+<div id="main-game-box">
+  <div id="door-content">
+    <div id="doorpic">
+      <img [src]="imageSource" alt="A door...">
+    </div>
+
+
+  </div>
+  <div id="answer-form-container">
+    <div class="flex">
+      <mat-form-field>
+        <mat-label for="answer"></mat-label>
+        <input matInput name="answer" type="text" [formControl]="answer"/>
+      </mat-form-field>
+      <button mat-raised-button (click)="submitAns()">Submit Answer</button>
+    </div>
+
+  </div>
+
+</div>
+<p>works?</p>

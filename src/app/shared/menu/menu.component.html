@@ -1,0 +1,30 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/login" (click)="onCloseMenu()" *ngIf="!loggedIn">
+    <mat-icon>login</mat-icon>
+    <span>Login</span>
+  </a>
+  <a mat-list-item routerLink="/login" (click)="onCloseMenu()" *ngIf="loggedIn">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </a>
+  <a mat-list-item routerLink="/register" (click)="onCloseMenu()" *ngIf="loggedIn">
+    <mat-icon>app_registration</mat-icon>
+    <span>Register</span>
+  </a>
+  <a mat-list-item routerLink="/main" (click)="onCloseMenu()">
+    <mat-icon>home</mat-icon>
+    <span>Main Game</span>
+  </a>
+  <a mat-list-item routerLink="/forum" (click)="onCloseMenu()">
+    <mat-icon>help_center</mat-icon>
+    <span>User Forum</span>
+  </a>
+  <a mat-list-item routerLink="/help" (click)="onCloseMenu()">
+    <mat-icon>help</mat-icon>
+    <span>Help</span>
+  </a>
+  <a mat-list-item routerLink="/about" (click)="onCloseMenu()">
+    <mat-icon>About</mat-icon>
+    <span>About</span>
+  </a>
+</mat-nav-list>

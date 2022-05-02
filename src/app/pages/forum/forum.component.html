@@ -1,0 +1,22 @@
+<div id="forum-body">
+  <div id="comment-adder">
+    <mat-card-actions>
+      <form (ngSubmit)="submitComment">
+        <mat-form-field>
+          <mat-label for="comment">Comment: </mat-label>
+          <textarea matInput rows="10" cols="50" formControlName="commentAdder" required></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">ADD</button>
+      </form>
+    </mat-card-actions>
+  </div>
+  <mat-grid-list>
+    <mat-card fxLayout fxLayoutGap="10px">
+      <mat-card-title>User</mat-card-title>
+      <br>
+      <mat-card-content>comments</mat-card-content>
+    </mat-card>
+
+
+  </mat-grid-list>
+</div>

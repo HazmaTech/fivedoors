@@ -1,0 +1,17 @@
+#about-textbox{
+  background-color: beige;
+  display: block;
+  margin: 25px auto;
+  width: 75%;
+}
+h1{
+  padding-top: 25px;
+  text-align: center;
+}
+#insideContainer{
+  word-wrap: break-word;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 25px;
+  font-family: Arial, serif;
+}
