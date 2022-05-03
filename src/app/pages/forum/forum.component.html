@@ -10,11 +10,11 @@
       </form>
     </mat-card-actions>
   </div>
-  <mat-grid-list>
-    <mat-card fxLayout fxLayoutGap="10px">
-      <mat-card-title>User</mat-card-title>
+  <mat-grid-list *ngIf="comments.length">
+    <mat-card fxLayout fxLayoutGap="10px" *ngFor="let comment of comments; let i = index;">
+      <mat-card-title>{{comment.username}}</mat-card-title>
       <br>
-      <mat-card-content>comments</mat-card-content>
+      <mat-card-content>{{comment.comment}}</mat-card-content>
     </mat-card>
 
 
