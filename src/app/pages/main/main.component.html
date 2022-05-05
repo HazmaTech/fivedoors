@@ -1,3 +1,12 @@
+<div id="helpsMain" [ngSwitch]="currentDoor" >
+  <div *ngSwitchCase="0">The first door... you might need a magic word to open it.</div>
+  <div *ngSwitchCase="1">Getting lost is sometimes a way to progress</div>
+  <div *ngSwitchCase="2">The sound of keyboards echo in your head...</div>
+  <div *ngSwitchCase="3">A community effort might be needed here.</div>
+  <div *ngSwitchCase="4">The answer lies in another world...</div>
+  <div *ngSwitchCase="5">Well, you're not really free, the door just opened to a picture. Thanks for suffering through this.</div>
+</div>
+
 <div id="main-game-box">
   <div id="door-content">
     <div id="doorpic">
@@ -12,10 +21,10 @@
         <mat-label for="answer"></mat-label>
         <input matInput name="answer" type="text" [formControl]="answer"/>
       </mat-form-field>
+      <br>
       <button mat-raised-button (click)="submitAns()">Submit Answer</button>
     </div>
 
   </div>
 
 </div>
-<p>works?</p>

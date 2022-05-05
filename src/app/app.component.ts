@@ -3,7 +3,8 @@ import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
 import {MatSidenav} from "@angular/material/sidenav";
 import {AuthserviceService} from "./shared/services/authservice.service";
-
+import {UserService} from "./shared/services/user.service";
+import {User} from "./shared/models/user"
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent implements OnInit {
   routes: Array<string> = [];
   loggedIn?: firebase.default.User | null;
 
-  constructor(private router: Router, private auth: AuthserviceService) {
+
+  constructor(private router: Router, private auth: AuthserviceService, private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -30,6 +32,21 @@ export class AppComponent implements OnInit {
     this.auth.isUserLoggedIn().subscribe(user => {
       this.loggedIn = user;
       localStorage.setItem('user', JSON.stringify(this.loggedIn));
+      // @ts-ignore
+      localStorage.setItem('userID', this.loggedIn.uid);
+      let currentuser: User;
+      // @ts-ignore
+      this.userService.getById(this.loggedIn.uid).subscribe(userr => {
+          console.log(userr);
+          // @ts-ignore
+          localStorage.setItem("username", userr.user);
+          // @ts-ignore
+          localStorage.setItem("doors", userr.doorsPassed);
+          //@ts-ignore
+          localStorage.setItem("userColl", JSON.stringify(userr));
+        }
+      );
+      console.log(localStorage.getItem("username"))
     }, error => {
       localStorage.setItem('user', JSON.stringify(null))
     })

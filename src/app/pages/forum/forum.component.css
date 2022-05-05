@@ -1,0 +1,11 @@
+#comment-adder{
+  text-align: center;
+  margin: auto;
+}
+.usernames{
+  background-color: lightgray;
+  border-bottom: 2px white;
+}
+.comments{
+  border-bottom: 1px wheat;
+}

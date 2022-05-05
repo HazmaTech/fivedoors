@@ -3,48 +3,48 @@
 export const anwsersRaw = [
   {
     'id': 1,
-    'answer': "c2VzYW1l" //sesame, about
-  },{
+    'answer': "c2VzYW1l"
+  }, {
     'id': 2,
-    'answer': ""
-  },{
+    'answer': "d2VsbCBJIGd1ZXNzIGl0IGFpbnQgZWFzeSBkb2luZyBub3RoaW5nIGF0IGFsbA=="
+  }, {
     'id': 3,
-    'answer': ""
-  },{
+    'answer': "d3JvbmcgYW5zd2Vy"
+  }, {
     'id': 4,
-    'answer': "" //alextől majd, idk
-  },{
+    'answer': "aGVoZQ=="
+  }, {
     'id': 5,
-    'answer': ""
-  },{
+    'answer': "d2FzdGUgb2YgdGltZQ=="
+  }, {
     'id': 6,
-    'answer': "" //forumos pipe
-  },{
+    'answer': "eW91J3JlIGF3ZnVsbHkgc3R1YmJvcm4="
+  }, {
     'id': 7,
-    'answer': ""
-  },{
+    'answer': "YW5ndWxhcmlzZ2FyYmFnZQ=="
+  }, {
     'id': 8,
-    'answer': ""
-  },{
+    'answer': "aGVhZCBiYWNrIHdoZXJlIHlvdSBjYW1lIGZyb20="
+  }, {
     'id': 9,
-    'answer': "" //head back to where you came from
-  },{
+    'answer': "c3RvcA=="
+  }, {
     'id': 10,
-    'answer': ""
-  },{
+    'answer': "dGhpcyBpcyBub3Qgd29ydGggaXQ="
+  }, {
     'id': 11,
-    'answer': ""
-  },{
+    'answer': "d2h5IGFyZSB5b3UgdGhpcyBpbnZlc3RlZD8="
+  }, {
     'id': 12,
-    'answer': ""
-  },{
+    'answer': "dGhpcyBpcyBqdXN0IGEgbWVkaW9jcmUgcHJvamVjdA=="
+  }, {
     'id': 13,
-    'answer': ""
-  },{
+    'answer': "eW91IHJlZWFsbHkgbmVlZCB0byBrbm93IHRoaXMgYmFkPw=="
+  }, {
     'id': 14,
-    'answer': "" //zoliii
-  },{
+    'answer': "d2luZG93"
+  }, {
     'id': 15,
-    'answer': ""
+    'answer': "amFua2l6b2x0YW4="
   },
 ]

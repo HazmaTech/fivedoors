@@ -1,0 +1,16 @@
+#helps{
+  padding-top: 300px;
+  color: white;
+  margin: auto;
+  height: 75%;
+  text-align: right;
+}
+#hint{
+  display: flex;
+  margin: auto;
+  text-align: center;
+}
+span{
+  text-align: center;
+  margin: auto;
+}

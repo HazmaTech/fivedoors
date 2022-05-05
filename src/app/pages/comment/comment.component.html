@@ -1,1 +1,18 @@
-<p>comment works!</p>
+<div>
+  <div id="hint">
+    <span>
+      There may be hints around here to help you, why not feel around?
+      If you can't find it, perhaps a darker view might help...
+    </span>
+  </div>
+  <div id="helps" [ngSwitch]="currentQuestion" >
+    <div *ngSwitchCase="0">Sometimes, you just need to read the manual.</div>
+    <div *ngSwitchCase="1">The not-found parts of this place may hide the answer to this one?</div>
+    <div *ngSwitchCase="2">lastnamefirstname of the guy who made the youtube playlist. His keyboard is really ear deafening</div>
+    <div *ngSwitchCase="3">The forum awaits your --opinion--</div>
+    <div *ngSwitchCase="4">There's another website with this same premise. Although it uses a different thing as an exit. I wonder what it is...</div>
+    <div *ngSwitchCase="5">Well, you're not really free, the door just opened to a picture. Thanks for suffering through this.</div>
+  </div>
+
+
+</div>

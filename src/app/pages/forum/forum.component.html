@@ -1,22 +1,22 @@
 <div id="forum-body">
   <div id="comment-adder">
     <mat-card-actions>
-      <form (ngSubmit)="submitComment">
+      <form (ngSubmit)="addComment()" [formGroup]="commentsForm" >
         <mat-form-field>
           <mat-label for="comment">Comment: </mat-label>
-          <textarea matInput rows="10" cols="50" formControlName="commentAdder" required></textarea>
+          <textarea matInput rows="3" cols="150" formControlName="comment" required></textarea>
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit">ADD</button>
       </form>
     </mat-card-actions>
   </div>
-  <mat-grid-list *ngIf="comments.length">
-    <mat-card fxLayout fxLayoutGap="10px" *ngFor="let comment of comments; let i = index;">
+
+
+  <mat-grid-list cols="2" >
+    <mat-card fxLayout fxLayoutGap="10px" *ngFor="let comment of comments">
       <mat-card-title>{{comment.username}}</mat-card-title>
-      <br>
       <mat-card-content>{{comment.comment}}</mat-card-content>
     </mat-card>
-
-
   </mat-grid-list>
+
 </div>

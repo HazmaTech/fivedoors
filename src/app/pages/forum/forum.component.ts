@@ -1,5 +1,5 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, Validators} from "@angular/forms";
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Form, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Comment} from '../../shared/models/comment';
 import {CommentsService} from "../../shared/services/comments.service";
 import {Router} from "@angular/router";
@@ -10,19 +10,24 @@ import {Router} from "@angular/router";
   styleUrls: ['./forum.component.css']
 })
 export class ForumComponent implements OnInit, OnChanges {
-
   comments: Array<Comment> = [];
-  //@ts-ignore
+  length = -1;
   commentsForm = this.createForm({
-    id: '',
-    username: '',
-    comment: '',
+    // @ts-ignore
+    id: localStorage.getItem("userID"),
+    // @ts-ignore
+    username: localStorage.getItem("username"),
+    comment: "",
   });
-  submitComment: any;
-  commentAdder= new FormControl('');
   constructor(private fb:FormBuilder, private commentServ: CommentsService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log("bement a buzi az initbe")
+    this.length = this.comments.length;
+    this.commentServ.getAll().subscribe(comments =>{
+        this.comments = comments;
+      }
+    );
   }
 
   createForm(model: Comment) {
@@ -31,17 +36,28 @@ export class ForumComponent implements OnInit, OnChanges {
     return formGroup;
   }
   addComment(){
+    console.log(localStorage.getItem("username"));
     if (this.commentsForm.valid) {
       if (this.commentsForm.get('comment')) {
+        if(this.commentsForm.get('comment')?.value ==="opinion"){
+          this.commentsForm.setValue({
+            id: this.commentsForm.get('id'),
+            username: localStorage.getItem("username"),
+            comment: "angularisgarbage"
+          });
+        }
         this.commentServ.create(this.commentsForm.value).then(_=> {
-            this.router.navigateByUrl("/forum")
+            console.log("comment added");
           }
         ).catch(err => console.error(err))
       }
     }
+    console.log("KURVA SZÁDAT")
   }
-  ngOnChanges(): void {
+  ngOnChanges(changes:SimpleChanges): void {
+    console.log("changes be like")
     this.commentServ.getAll().subscribe(comments => {
+      console.log(comments.length)
       this.comments = comments;
     })
   }
