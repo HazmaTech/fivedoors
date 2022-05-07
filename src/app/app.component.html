@@ -1,12 +1,5 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-
-
-
-
-
-
-
     <app-menu (selected)="changePage($event)" [current]="page" *ngIf="page" (onClose)="onClose($event, sidenav)" [loggedIn]="loggedIn" (onLogout)="logout()"></app-menu>
   </mat-sidenav>
   <mat-sidenav-content>

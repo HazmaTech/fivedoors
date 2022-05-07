@@ -20,16 +20,13 @@ export class ForumComponent implements OnInit, OnChanges {
     comment: "",
   });
   constructor(private fb:FormBuilder, private commentServ: CommentsService, private router: Router) { }
-
   ngOnInit(): void {
-    console.log("bement a buzi az initbe")
     this.length = this.comments.length;
     this.commentServ.getAll().subscribe(comments =>{
         this.comments = comments;
       }
     );
   }
-
   createForm(model: Comment) {
     let formGroup = this.fb.group(model);
     formGroup.get('comment')?.addValidators([Validators.required]);
@@ -52,12 +49,9 @@ export class ForumComponent implements OnInit, OnChanges {
         ).catch(err => console.error(err))
       }
     }
-    console.log("KURVA SZÁDAT")
   }
   ngOnChanges(changes:SimpleChanges): void {
-    console.log("changes be like")
     this.commentServ.getAll().subscribe(comments => {
-      console.log(comments.length)
       this.comments = comments;
     })
   }

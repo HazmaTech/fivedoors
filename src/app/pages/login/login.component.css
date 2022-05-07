@@ -32,3 +32,6 @@ mat-form-field{
 button{
   margin-bottom: 25px;
 }
+span {
+  padding: 5px 5px 5px 5px;
+}

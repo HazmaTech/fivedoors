@@ -5,9 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ConverterPipe implements PipeTransform {
   transform(value: string): string { //expand this later lmao
-    return btoa(value);
+    return atob(value).split(' ')[0];
   }
-  transformTo(value: string):string{
-    return atob(value);
-  }
+
 }

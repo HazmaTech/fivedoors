@@ -24,49 +24,29 @@ export class MainComponent implements OnInit {
   imageSource: string = "";
   //@ts-ignore
   userCol: modelUser.User = JSON.parse(localStorage.getItem("userColl"));
-
-  constructor(private auth: AuthserviceService, private mainhelp: MainhelperService, private pipe: ConverterPipe, private userService: UserService) {
-  }
-
+  constructor(private auth: AuthserviceService, private mainhelp: MainhelperService, private pipe: ConverterPipe, private userService: UserService) {}
   ngOnInit(): void {
     this.auth.isUserLoggedIn().subscribe(user => {
       this.loggedIn = user;
       localStorage.setItem('user', JSON.stringify(this.loggedIn));
         this.currentDoor = this.userCol.doorsPassed;
         this.doorUpdate();
-
-
     }, error => {
-      console.log(error);
       localStorage.setItem('user', JSON.stringify(null));
     });
-    console.log(localStorage.getItem('user'));
   }
-
   submitAns() {
     //let userans = this.pipe.transform(this.answer.value);
-    let userans = btoa(this.answer.value)
-    console.log((this.currentDoor * 7) % 15)
-    let ans = anwsersRaw[(this.currentDoor * 7) % 15]; //shh
-    console.log(userans);
-    console.log(ans.answer);
-    if (userans == ans.answer) {
-      console.log("he got it")
+    let userans = this.answer.value;
+    let ans = this.pipe.transform(anwsersRaw[(this.currentDoor * 7) % 15].answer); //shh
+    if (userans == ans) {
       this.currentDoor += 1;
-      console.log(localStorage.getItem("userColl"))
-      for (let i in this.userCol){
-        console.log(i);
-        //@ts-ignore
-        console.log(userCol[i])
-      }
       this.userCol.doorsPassed += 1;
       this.userService.update(this.userCol);
       this.doorUpdate();
     }
   }
-
   doorUpdate() {
-    console.log(this.currentDoor)
     switch (this.currentDoor) {
       case 0:
         this.imageSource = "assets/firstdoor.jpg";

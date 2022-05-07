@@ -43,7 +43,6 @@ export class RegisterComponent implements OnInit {
         this.router.navigateByUrl('/login');
 
       }).catch(err => {
-        console.log("whoops")
         console.log(err);
       })
     }

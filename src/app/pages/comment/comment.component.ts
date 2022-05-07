@@ -10,15 +10,11 @@ export class CommentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("BEMENT A HELP INITJÉBE")
     try{
   //@ts-ignore
       this.currentQuestion = JSON.parse(localStorage.getItem("userColl")).doorsPassed;
-      console.log(localStorage.getItem("doors"));
     }catch (e){
       console.log(e)
     }
-    console.log(this.currentQuestion);
   }
-
 }

@@ -1,25 +1,25 @@
 <mat-nav-list>
-  <a mat-list-item routerLink="/login" (click)="onCloseMenu()" *ngIf="!loggedIn">
+  <a mat-list-item routerLink="/login" (click)="onCloseMenu()" *ngIf="!menuCheck">
     <mat-icon>login</mat-icon>
     <span>Login</span>
   </a>
-  <a mat-list-item routerLink="/login" (click)="onCloseMenu()" *ngIf="loggedIn">
+  <a mat-list-item routerLink="/login" (click)="logoutHelper()" *ngIf="menuCheck">
     <mat-icon>logout</mat-icon>
     <span>Logout</span>
   </a>
-  <a mat-list-item routerLink="/register" (click)="onCloseMenu()" *ngIf="loggedIn">
+  <a mat-list-item routerLink="/register" (click)="onCloseMenu()" *ngIf="!menuCheck">
     <mat-icon>app_registration</mat-icon>
     <span>Register</span>
   </a>
-  <a mat-list-item routerLink="/main" (click)="onCloseMenu()">
+  <a mat-list-item routerLink="/main" (click)="onCloseMenu()" *ngIf="menuCheck">
     <mat-icon>home</mat-icon>
     <span>Main Game</span>
   </a>
-  <a mat-list-item routerLink="/forum" (click)="onCloseMenu()">
+  <a mat-list-item routerLink="/forum" (click)="onCloseMenu()" *ngIf="menuCheck">
     <mat-icon>help_center</mat-icon>
     <span>User Forum</span>
   </a>
-  <a mat-list-item routerLink="/help" (click)="onCloseMenu()">
+  <a mat-list-item routerLink="/help" (click)="onCloseMenu()" *ngIf="menuCheck">
     <mat-icon>help</mat-icon>
     <span>Help</span>
   </a>
