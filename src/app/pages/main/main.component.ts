@@ -49,22 +49,22 @@ export class MainComponent implements OnInit {
   doorUpdate() {
     switch (this.currentDoor) {
       case 0:
-        this.imageSource = "assets/firstdoor.jpg";
+        this.imageSource = "/assets/firstdoor.jpg";
         break;
       case 1:
-        this.imageSource = "assets/seconddoor.jpg";
+        this.imageSource = "/assets/seconddoor.jpg";
         break;
       case 2:
-        this.imageSource = "assets/thirddoor.jpg";
+        this.imageSource = "/assets/thirddoor.jpg";
         break;
       case 3:
-        this.imageSource = "assets/fourthdoor.jpg";
+        this.imageSource = "/assets/fourthdoor.jpg";
         break;
       case 4:
-        this.imageSource = "assets/fifthdoor.jpg";
+        this.imageSource = "/assets/fifthdoor.jpg";
         break;
       case 5:
-        this.imageSource = "assets/freedom.jpg";
+        this.imageSource = "/assets/freedom.jpg";
         break;
     }
   }

@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
 
     }, error => {
       localStorage.setItem('user', JSON.stringify(null))
+      this.router.navigateByUrl("login").catch(error => console.log(error));
     })
   }
   changePage(selected: string) {
